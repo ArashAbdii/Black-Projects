@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'iran sans';
+    src: url('./fonts/IRANSansX-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    direction: rtl;
+    font-family: "iran sans", sans-serif;
+}
+
+.header-site{
+    background-image: url('https://imageio.forbes.com/specials-images/imageserve/637925f8fb68cde7521a9f14/0x0.jpg?format=jpg&crop=3594,2022,x0,y374,safe&height=900&width=1600&fit=bounds');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 3rem;
+}
+
+.header-site::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(2, 2, 2, 0.4), rgba(223, 223, 223, 0.2));
+    z-index: 1;
+}
+
+.navigation-menu{
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(50deg, rgba(85, 57, 189, 0.6), rgba(155, 124, 228, 0.5));
+    backdrop-filter: blur(5px);
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+    padding: 15px 0;
+}
+
+.navigation-menu li{
+    list-style: none;
+}
+
+.navigation-menu > li::after{
+    content: "";
+    display: block;
+    border-bottom: 3px solid whitesmoke;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    -webkit-transition: transform 250ms ease-in-out;
+    -moz-transition: transform 250ms ease-in-out;
+    -ms-transition: transform 250ms ease-in-out;
+    -o-transition: transform 250ms ease-in-out;
+}
+
+.navigation-menu > li:hover::after{
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+}
+
+.navigation-menu li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation-menu li[class="parent"]{
+    position: relative;
+}
+
+.navigation-menu li[class="parent"]::before{
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 110%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transition: transform 0.15s ease-in-out;
+    -webkit-transition: transform 0.15s ease-in-out;
+    -moz-transition: transform 0.15s ease-in-out;
+    -ms-transition: transform 0.15s ease-in-out;
+    -o-transition: transform 0.15s ease-in-out;
+}
+
+.navigation-menu li[class="parent"]:hover::before{
+    transform: rotate(220deg);
+    -webkit-transform: rotate(220deg);
+    -moz-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    -o-transform: rotate(220deg);
+}
+
+.goods-sub-menu{
+    position: absolute;
+    background-color: rgba(85, 57, 189, 0.6);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    width: 200px;
+    padding: 15px;
+    right: 50%;
+    display: none;
+    transition: 1.5s ease-in-out;
+    -webkit-transition: 1.5s ease-in-out;
+    -moz-transition: 1.5s ease-in-out;
+    -ms-transition: 1.5s ease-in-out;
+    -o-transition: 1.5s ease-in-out;
+}
+
+.goods-sub-menu > li:hover{
+    background-color: #fff;
+}
+
+.goods-sub-menu > li:hover a:not(.pants > li a){
+    color: #1c1c1c;
+}
+
+.parent:hover .goods-sub-menu:not(.pants){
+    display: block;
+}
+
+.goods-sub-menu li{
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+
+.pnats-parent:hover .pants{
+    display: block;
+}
+
+.pants li:hover a{
+    color: #1c1c1c;
+}
